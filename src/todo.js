@@ -8,7 +8,7 @@ class Todo extends Component {
   render() {
     return (
       <div>
-        <li>{this.props.task}<button>Mark As Complete</button></li>
+        <li>{this.props.task}<button onClick={this.props.markDone}>Mark As Complete</button></li>
       </div>
     )
   }

@@ -11,7 +11,7 @@ class List extends Component {
       <div>
         <ul>
           {this.props.todos.map((item, index) => {
-            return <Todo key={index} task={item} />
+            return <Todo key={index} task={item.task} markDone={this.props.markDone} />
           })}
         </ul>
       </div>
