@@ -5,10 +5,14 @@ class Todo extends Component {
     super(props);
   }
 
+  handleClick = () => {
+    this.props.markDone();
+  }
+
   render() {
     return (
       <div>
-        <li>{this.props.task}<button onClick={this.props.markDone}>Mark As Complete</button></li>
+        <li>{this.props.task} <button onClick={this.props.finishTodo}>Mark As Complete</button></li>
       </div>
     )
   }

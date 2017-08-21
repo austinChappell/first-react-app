@@ -6,12 +6,16 @@ class List extends Component {
     super(props);
   }
 
+  finishTodo = (index) => {
+    this.props.finishTodo(index);
+  }
+
   render() {
     return (
       <div>
         <ul>
           {this.props.todos.map((item, index) => {
-            return <Todo key={index} task={item.task} markDone={this.props.markDone} />
+            return <Todo key={index} done={item.done} task={item.task} finishTodo={this.props.finishTodo} />
           })}
         </ul>
       </div>

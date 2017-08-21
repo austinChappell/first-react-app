@@ -31,7 +31,11 @@ class App extends Component {
 
   handleChange = (event) => {this.setState({ input: event.target.value })};
 
-  // handleFinishTodo = (this) => {}
+  handleFinishTodo = (index) => {
+    let task = this.state.todos[index];
+    let taskDone = task.done
+    this.setState({taskDone: !this.done})
+  }
 
   render() {
     let undone = this.state.todos.filter((todo) => {
@@ -47,8 +51,8 @@ class App extends Component {
           To Do List
         </h1>
         <SearchBar onClick={this.handleClick} handleChange={this.handleChange} inputValue={this.state.input} />
-        <ListSection sectionTitle="To Do" todos={undone} markDone={this.handleFinishTodo} />
-        <ListSection sectionTitle="Finished" todos={done} markDone={this.handleFinishTodo} />
+        <ListSection sectionTitle="To Do" todos={undone} finsihTodo={this.handleFinishTodo} />
+        <ListSection sectionTitle="Finished" todos={done} finishTodo={this.handleFinishTodo} />
       </div>
     )
   }

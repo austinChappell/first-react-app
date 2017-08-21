@@ -11,7 +11,7 @@ class ListSection extends Component {
     return (
       <div>
         <Title title={this.props.sectionTitle} />
-        <List todos={this.props.todos} markDone={this.props.markDone} />
+        <List todos={this.props.todos} finishTodo={this.props.finishTodo} />
       </div>
     )
   }
