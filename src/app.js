@@ -31,10 +31,22 @@ class App extends Component {
 
   handleChange = (event) => {this.setState({ input: event.target.value })};
 
-  handleFinishTodo = (index) => {
-    let task = this.state.todos[index];
-    let taskDone = task.done
-    this.setState({taskDone: !this.done})
+  handleFinishTodo = (event) => {
+    // let task = this.state.todos[index];
+    // let taskDone = task.done
+    // this.setState({taskDone: !this.done})
+    const id = event.target.id;
+    const changeTodos = this.state.todos.map((todo) => {
+      if (todo.task === id) {
+        todo.done = !todo.done;
+        return todo;
+      } else {
+        return todo;
+      }
+    })
+    console.log(event.target.id);
+    console.log(changeTodos);
+    this.setState({todos: changeTodos})
   }
 
   render() {
@@ -51,7 +63,7 @@ class App extends Component {
           To Do List
         </h1>
         <SearchBar onClick={this.handleClick} handleChange={this.handleChange} inputValue={this.state.input} />
-        <ListSection sectionTitle="To Do" todos={undone} finsihTodo={this.handleFinishTodo} />
+        <ListSection sectionTitle="To Do" todos={undone} finishTodo={this.handleFinishTodo} />
         <ListSection sectionTitle="Finished" todos={done} finishTodo={this.handleFinishTodo} />
       </div>
     )

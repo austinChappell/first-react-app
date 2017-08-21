@@ -12,13 +12,11 @@ class List extends Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          {this.props.todos.map((item, index) => {
-            return <Todo key={index} done={item.done} task={item.task} finishTodo={this.props.finishTodo} />
-          })}
-        </ul>
-      </div>
+      <ul>
+        {this.props.todos.map((item, index) => {
+          return <Todo key={index} done={item.done} task={item.task} finishTodo={this.props.finishTodo} />
+        })}
+      </ul>
     )
   }
 }

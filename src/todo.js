@@ -11,9 +11,7 @@ class Todo extends Component {
 
   render() {
     return (
-      <div>
-        <li>{this.props.task} <button onClick={this.props.finishTodo}>Mark As Complete</button></li>
-      </div>
+      <li>{this.props.task} <button id={this.props.task} onClick={this.props.finishTodo}>Mark As Complete</button></li>
     )
   }
 }
