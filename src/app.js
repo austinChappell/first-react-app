@@ -32,10 +32,8 @@ class App extends Component {
   handleChange = (event) => {this.setState({ input: event.target.value })};
 
   handleFinishTodo = (event) => {
-    // let task = this.state.todos[index];
-    // let taskDone = task.done
-    // this.setState({taskDone: !this.done})
     const id = event.target.id;
+    const buttonText = event.target.textContent;
     const changeTodos = this.state.todos.map((todo) => {
       if (todo.task === id) {
         todo.done = !todo.done;
@@ -44,7 +42,7 @@ class App extends Component {
         return todo;
       }
     })
-    console.log(event.target.id);
+    console.log(event.target.textContent);
     console.log(changeTodos);
     this.setState({todos: changeTodos})
   }
